@@ -15,7 +15,7 @@ pipeline{
 		}
 		stage('Code Checkout From Git'){
 			steps{
-				git branch: 'main', url: 'https://github.com/Cloud-Gen-DevOps-Projects/AWS-Terraform-Zomato-Project.git'
+				git branch: 'main', url: 'https://github.com/Akashd-14/AWS-Terraform-Zomato-Project.git'
 			}
 		}
 		stage("SonarQube Code Analysis"){
