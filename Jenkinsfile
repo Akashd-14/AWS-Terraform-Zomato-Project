@@ -56,7 +56,7 @@ pipeline{
 				script{
 				withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
 					sh "docker build -t cloudzomato . "
-					sh "docker tag cloudzomato thanish/cloudzomato:latest"
+					sh "docker tag cloudzomato akashdakave05/cloudzomato:latest"
 					sh "docker push thanish/cloudzomato:latest"
 						}
 					}
@@ -64,12 +64,12 @@ pipeline{
 			}
 		stage("TRIVY is Image Scanning"){
 			steps{
-				sh "trivy image thanish/cloudzomato:latest >trivy.txt"
+				sh "trivy image akashdakave05/cloudzomato:latest >trivy.txt"
 			}
 		}
 		stage("Creating Docker Container "){
 			steps{
-				sh 'docker run -d --name zomato-app -h zomato -p 3000:3000 thanish/cloudzomato:latest'
+				sh 'docker run -d --name zomato-app -h zomato -p 3000:3000 akashdakave05/cloudzomato:latest'
 			}
 		}
 	}
