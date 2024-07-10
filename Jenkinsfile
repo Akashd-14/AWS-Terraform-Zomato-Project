@@ -57,7 +57,7 @@ pipeline{
 				withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
 					sh "docker build -t cloudzomato . "
 					sh "docker tag cloudzomato akashdakave05/cloudzomato:latest"
-					sh "docker push thanish/cloudzomato:latest"
+					sh "docker push akashdakave05/cloudzomato:latest"
 						}
 					}
 				}
