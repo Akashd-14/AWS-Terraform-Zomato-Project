@@ -25,12 +25,12 @@ resource "aws_security_group" "Jenkins-cicd-sg" {
   }
 
   tags = {
-    Name = "Jenkins-sg"
+    Name = "Jenkins-cicd-sg"
   }
 }
 
 
-resource "aws_instance" "web" {
+resource "aws_instance" "akash-app" {
   ami                    = "ami-04a81a99f5ec58529"
   instance_type          = "t3a.medium"
   key_name               = "Lps_App"
