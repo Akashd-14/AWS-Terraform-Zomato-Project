@@ -16,8 +16,8 @@ COPY . .
 # Build the React app
 RUN npm run build
 
-# Expose port 80 (or the port your app is configured to listen on)
-EXPOSE 80
+# Expose port 3000 (or the port your app is configured to listen on)
+EXPOSE 3000
 
 # Start your Node.js server (assuming it serves the React app)
 CMD ["npm", "start"]
